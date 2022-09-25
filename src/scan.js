@@ -5,13 +5,24 @@ QrScanner.WORKER_PATH = "./scanner/qr-scanner-worker.min.js";
 const scan = (current_tab_picture) => {
   QrScanner.scanImage(current_tab_picture)
     .then((result) => update_link(result))
-    .catch((error) => console.log(error || "No QR code found."));
+    .catch(() => update_no_qr_code());
 };
 
 // Take picture of the current tab, and scan for a QR code.
 chrome.tabs.captureVisibleTab(undefined, { format: "jpeg" }, scan);
+
+// Update the link for the QR code.
 const update_link = (result) => {
-  var click = document.getElementById("link");
-  click.innerHTML = result;
-  click.setAttribute("href", result);
+  var prefix = document.getElementById("prefix");
+  var qr_code_output = document.getElementById("qr-code-link");
+  prefix.innerText = "Link:";
+  qr_code_output.innerText = result;
+  qr_code_output.setAttribute("href", result);
+  qr_code_output.setAttribute("target", "_blank");
+};
+
+// Handler for when there is no QR code.
+const update_no_qr_code = () => {
+  var main_text = document.getElementById("main-text");
+  main_text.innerText = "No QR Code Found";
 };
