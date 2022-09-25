@@ -8,15 +8,18 @@
       crossorigin="anonymous"
     />
     <style>
-      .buttons {
-        text-align: center;
+      #main-text,
+      #prefix,
+      #qr-code-link {
+        font-size: 20px;
+        display: inline;
       }
     </style>
   </head>
 
-  <body style="height: 100px; width: 320px">
-    <div id="main-text" style="font-size: 20px; display: inline-block">
-      <p style="display:inline" id="prefix"></p>
+  <body style="height: 75px; width: 350px">
+    <div id="main-text">
+      <p id="prefix"></p>
       <a id="qr-code-link"></a>
     </div>
     <script type="module" src="scan.js"></script>

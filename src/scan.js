@@ -16,7 +16,7 @@ const update_link = (result) => {
   var prefix = document.getElementById("prefix");
   var qr_code_output = document.getElementById("qr-code-link");
   prefix.innerText = "Link:";
-  qr_code_output.innerText = result;
+  qr_code_output.innerText = result.length > 25 ? result.substring(0, 25) + "..." : result;
   qr_code_output.setAttribute("href", result);
   qr_code_output.setAttribute("target", "_blank");
 };
