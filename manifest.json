@@ -4,9 +4,7 @@
   "description": "Scans QR codes on any web page or PDF",
   "manifest_version": 3,
   "permissions": [
-    "tabs",
-    "activeTab",
-    "<all_urls>"
+    "activeTab"
   ],
   "icons": {
     "16": "images/icon.png",
