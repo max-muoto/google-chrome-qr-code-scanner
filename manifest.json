@@ -1,12 +1,31 @@
 {
   "name": "QR Code Scanner",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Scans QR codes on any web page or PDF",
-  "manifest_version": 2,
-  "background": {
-    "page": "src/popup.html"
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
   },
-  "browser_action": {
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/scanner*",
+        "*.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "action": {
     "default_popup": "src/popup.html",
     "default_icon": {
       "16": "images/icon.png",
@@ -15,12 +34,5 @@
       "128": "images/icon.png"
     }
   },
-  "permissions": ["tabs", "activeTab", "<all_urls>"],
-  "icons": {
-    "16": "images/icon.png",
-    "32": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
-  },
-  "web_accessible_resources": ["src/scanner*", "*.html"]
+  "content_security_policy": {}
 }
