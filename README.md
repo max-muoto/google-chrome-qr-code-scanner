@@ -4,6 +4,5 @@ Scans for a QR code on a website or PDF opened in Chrome. Utilizes [nimiq/qr-sca
 
 # Installation
 
-Plan to make it available on the Chrome Web Store.
-
-In the meantime, you can simply download it as a ZIP file, extract it, and load it as an unpacked extension.
+* [Chrome Web Store](https://chrome.google.com/webstore/detail/fkpngmoodfpnnnnbabhnnbemglnphncc?authuser=0&hl=en)
+* Or, you can simply download it as a ZIP file, extract it, and load it as an unpacked extension.
